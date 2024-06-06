@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcv5twwb4gaof"
+path="res://.godot/imported/mysql.obj-25e0336eb9e5af5582b76be5e2f27f23.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mysql.obj-25e0336eb9e5af5582b76be5e2f27f23.mesh"]
+
+source_file="res://Models/Skills/mysql.obj"
+dest_files=["res://.godot/imported/mysql.obj-25e0336eb9e5af5582b76be5e2f27f23.mesh", "res://.godot/imported/mysql.obj-25e0336eb9e5af5582b76be5e2f27f23.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

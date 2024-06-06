@@ -1,0 +1,142 @@
+[gd_scene load_steps=22 format=3 uid="uid://dw573642ysgma"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_0ybis"]
+[ext_resource type="Script" path="res://camera_orbit.gd" id="1_54i7u"]
+[ext_resource type="PackedScene" uid="uid://dw1tlnouw5ar8" path="res://Models/Sword.dae" id="1_fmvba"]
+[ext_resource type="AudioStream" uid="uid://2kkth6ouvc7g" path="res://Sounds/SFX_Jump_09.wav" id="2_3va7l"]
+[ext_resource type="Texture2D" uid="uid://du2s28oinhadl" path="res://Models/Textures/leather_white_diff_4k.png" id="2_psa7y"]
+[ext_resource type="AudioStream" uid="uid://ds70hhjj13o27" path="res://Sounds/pumpkin_break_01.ogg" id="2_xq108"]
+[ext_resource type="AudioStream" uid="uid://duirjh12nb62e" path="res://Sounds/hit01.wav" id="3_b1fyw"]
+[ext_resource type="Texture2D" uid="uid://bo2nra0cxc42v" path="res://Models/Textures/leather_white_nor_gl_4k.png" id="3_mxoei"]
+[ext_resource type="PackedScene" uid="uid://boethpl6sm42y" path="res://ui.tscn" id="4_g413i"]
+[ext_resource type="AudioStream" uid="uid://c8lgt7ybst5np" path="res://Sounds/Win sound.wav" id="4_qpfbp"]
+[ext_resource type="Texture2D" uid="uid://bq3nr87h620hc" path="res://Models/Textures/leather_white_rough_4k.png" id="4_wkplh"]
+[ext_resource type="AudioStream" uid="uid://cmckodbg3s4w4" path="res://Sounds/Replenish.ogg" id="7_3i828"]
+[ext_resource type="AudioStream" uid="uid://nqy3d3lndqu0" path="res://Sounds/PickedCoin.wav" id="8_g75pg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_go8g1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3q01c"]
+albedo_texture = ExtResource("2_psa7y")
+roughness_texture = ExtResource("4_wkplh")
+normal_enabled = true
+normal_texture = ExtResource("3_mxoei")
+uv1_triplanar = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_8wqsx"]
+outer_radius = 0.57
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfwm4"]
+albedo_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ic1mi"]
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0.785398)]
+}
+
+[sub_resource type="Animation" id="Animation_28w5t"]
+resource_name = "attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0.785398), Vector3(0, 1.5708, 1.5708), Vector3(0, 1.5708, 0.785398)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0chu"]
+_data = {
+"RESET": SubResource("Animation_ic1mi"),
+"attack": SubResource("Animation_28w5t")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_427go"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_0ybis")
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999789, -0.02056, 0, 0.02056, 0.999789, -0.547415, 0.347144, 0.462737)
+stream = ExtResource("2_3va7l")
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999789, -0.02056, 0, 0.02056, 0.999789, -0.547415, 0.347144, 0.462737)
+stream = ExtResource("3_b1fyw")
+max_db = 2.0
+
+[node name="Win" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_qpfbp")
+
+[node name="Swing" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999789, -0.02056, 0, 0.02056, 0.999789, -0.547415, 0.347144, 0.462737)
+stream = ExtResource("2_xq108")
+
+[node name="LifeNoise" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_3i828")
+volume_db = 1.0
+
+[node name="SkillNoise" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_g75pg")
+volume_db = 1.0
+
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07024, 0)
+layers = 2
+mesh = SubResource("CapsuleMesh_go8g1")
+surface_material_override/0 = SubResource("StandardMaterial3D_3q01c")
+
+[node name="Halo" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866986, 0)
+mesh = SubResource("TorusMesh_8wqsx")
+surface_material_override/0 = SubResource("StandardMaterial3D_gfwm4")
+
+[node name="CameraOrbit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_54i7u")
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrbit"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0187841, 1.40639, -2.94054)
+current = true
+
+[node name="WeaponHolder" type="Node3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.799831, -0.016448, 0, 0.016448, 0.799831, -0.547415, 0.347144, 0.462737)
+
+[node name="Sword" parent="WeaponHolder" instance=ExtResource("1_fmvba")]
+transform = Transform3D(-2.55972e-07, 2.55972e-07, 0.1, 0.0707107, 0.0707107, 0, -0.0707107, 0.0707107, -3.61999e-07, -0.145599, 0.783665, -0.263971)
+
+[node name="SwordAnimation" type="AnimationPlayer" parent="WeaponHolder"]
+libraries = {
+"": SubResource("AnimationLibrary_l0chu")
+}
+
+[node name="AttackRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -0.173728, 0.906383, -0.570272)
+target_position = Vector3(0, 0, 0.3)
+collision_mask = 4
+debug_shape_thickness = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_g413i")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11675, 0)
+shape = SubResource("CapsuleShape3D_427go")

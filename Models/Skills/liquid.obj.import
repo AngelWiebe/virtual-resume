@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7ifvrwtco33d"
+path="res://.godot/imported/liquid.obj-2a6f96aae50af0714a97ed019a391236.mesh"
+
+[deps]
+
+files=["res://.godot/imported/liquid.obj-2a6f96aae50af0714a97ed019a391236.mesh"]
+
+source_file="res://Models/Skills/liquid.obj"
+dest_files=["res://.godot/imported/liquid.obj-2a6f96aae50af0714a97ed019a391236.mesh", "res://.godot/imported/liquid.obj-2a6f96aae50af0714a97ed019a391236.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

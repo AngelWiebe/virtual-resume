@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jyg176sj5qtg"
+path="res://.godot/imported/azure.obj-3e1191fdf1d7b31fff17a2552143326c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/azure.obj-3e1191fdf1d7b31fff17a2552143326c.mesh"]
+
+source_file="res://Models/Skills/azure.obj"
+dest_files=["res://.godot/imported/azure.obj-3e1191fdf1d7b31fff17a2552143326c.mesh", "res://.godot/imported/azure.obj-3e1191fdf1d7b31fff17a2552143326c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

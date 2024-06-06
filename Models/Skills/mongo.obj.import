@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cpjb3ajesoxib"
+path="res://.godot/imported/mongo.obj-1f3e2c80912b947dee270ee00e636359.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mongo.obj-1f3e2c80912b947dee270ee00e636359.mesh"]
+
+source_file="res://Models/Skills/mongo.obj"
+dest_files=["res://.godot/imported/mongo.obj-1f3e2c80912b947dee270ee00e636359.mesh", "res://.godot/imported/mongo.obj-1f3e2c80912b947dee270ee00e636359.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

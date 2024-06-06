@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwbr2avycm3mk"
+path="res://.godot/imported/typescript.obj-92ad03ed0da44044f60c95cd502dc87b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/typescript.obj-92ad03ed0da44044f60c95cd502dc87b.mesh"]
+
+source_file="res://Models/Skills/typescript.obj"
+dest_files=["res://.godot/imported/typescript.obj-92ad03ed0da44044f60c95cd502dc87b.mesh", "res://.godot/imported/typescript.obj-92ad03ed0da44044f60c95cd502dc87b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
