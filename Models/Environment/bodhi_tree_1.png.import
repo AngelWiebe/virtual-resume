@@ -2,12 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckfo36t7xer25"
+uid="uid://er341g3w1p75"
 path="res://.godot/imported/bodhi_tree_1.png-3ecc004e989b1cd6c57c0f7815a14ce8.ctex"
 metadata={
 "vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
@@ -22,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmd420pvmyvx4"
+uid="uid://dfy5osrapxldk"
 path.s3tc="res://.godot/imported/bodhi_tree_3.png-b0cd46bf8805549a5d507f0b4044d402.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

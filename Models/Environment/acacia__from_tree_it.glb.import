@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uq8sw4thwjw8"
+uid="uid://1hfq7vcpfuqf"
 path="res://.godot/imported/acacia__from_tree_it.glb-d3ce5b803d19417fcd19e7101774466d.scn"
 
 [deps]
@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/acacia__from_tree_it.glb-d3ce5b803d19417fcd19
 
 [params]
 
-nodes/root_type="StaticBody3D"
-nodes/root_name="ColorfulTree"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
